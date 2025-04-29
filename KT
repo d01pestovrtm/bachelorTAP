@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: fig2dev Version 3.2.8b -->
+<!-- CreationDate: 2025-01-21 14:12:52 -->
+<!-- Magnification: 1.05 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="563pt" height="529pt"
+	viewBox="1293 303 8934 8394">
+<g fill="none">
+<!-- Line -->
+<polyline points=" 3645,2070 3330,1665 2970,1080 3285,540 4140,450 4905,315 6300,450 7200,765 7290,1350
+"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 7425,1890 7380,2430 6795,2970 5895,3015 4725,2970"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 4410,2970 3780,2970 3465,2655 3375,2385 4140,1935 4680,1800"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 5310,1665 6030,1530 6615,1575 7560,1530 8595,1890 9720,3195 10215,4680 10080,5715
+ 9765,6840 8955,8100 7920,8685 7155,8685 6885,7830 7020,7200"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 7200,6795 7335,6165 7650,5580 7605,4905 7290,3915 6795,3240"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 5985,2655 5490,2205 4815,1530 3780,1035 3330,1260"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 2790,1575 2025,2070 1395,2700 1305,4050 1305,5175 1800,7200 3150,8190 3870,8460
+ 4455,7920 4680,7650"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 4905,7380 5265,6750 4680,6030 5175,5670"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 5535,5625 5760,5850 5760,6255 6345,6570 6480,6930 7515,7065 7965,7740 7290,8100
+"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 6615,8235 5760,8010 4950,7605 4320,7020 4770,6615"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 5310,6165 5355,5580 5130,4995 4635,3915 4545,2700 3960,2295"
+	stroke="#000000" stroke-width="8px"/>
+</g>
+</svg>

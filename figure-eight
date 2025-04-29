@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: fig2dev Version 3.2.8b -->
+<!-- CreationDate: 2025-01-21 14:07:44 -->
+<!-- Magnification: 1.05 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="668pt" height="481pt"
+	viewBox="1113 708 10599 7629">
+<g fill="none">
+<!-- Line -->
+<polyline points=" 3960,7335 3330,7740 2430,8145 1620,7830 1350,7155 1125,5670 1260,3870 1440,2385
+ 2115,1980 3150,1395 4500,1215 6570,900 7875,1215 8730,2025 8010,2610 7245,2655
+"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 6435,2790 5535,3060 4410,3780 3690,4500 3195,5445 3240,6345 4455,7245 5265,7920
+ 6120,7965 7155,7290"
+	stroke="#ff0000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 7650,6975 8235,6525 8820,6030 9090,5355 8190,4590 7155,4005 6705,3060 6570,1935
+ 7290,1260"
+	stroke="#00ff00" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 7695,945 8370,720 9855,1395 11205,2880 11700,4950 11340,6210 9765,7965 8145,8325
+ 7650,7470 7110,6525 6660,5850 5400,5580 4455,6885"
+	stroke="#0000ff" stroke-width="8px"/>
+
+</g>
+</svg>
