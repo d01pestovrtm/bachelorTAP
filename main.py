@@ -8,7 +8,8 @@ import matrix as m
 if __name__ == "__main__":
 	config = configparser.ConfigParser()
 	config.read('config.ini')
-	config_filename = config['Settings']['input_file']
+	#config_filename = config['Settings']['input_file']
+	config_filename = 'trefoil'
 	strands = parser.parse_svg(config_filename)
 	wirt_pres = wirt_presentation(strands)
 	indices = find_min_generating_set(wirt_pres)
