@@ -31,32 +31,52 @@ def verify_homomorphism(images, wirt_pres):
 
 
 def compute_hom(images, wirt_pres, order):
+    """computes homomorphism under given generating set
+
+    The idea is following:
+    We know that from given generating set we can deduce all other images according relations
+    Suppose that we know images of generators i, j, k and may find other images from relations in Wirtinger presentation
+    the traversal function is responsible for going from relation 0 up to n-1 and checks 
+    wherether the image already exists or can be computed from already known images.
+
+    We also check if all permutations are of the same order. Baceause if it is not, then the generators cannot be conjugated
+    and thus it is definetely not a homomorphism. See Prof. Dr. Friedl "Knot theory" notes
+
+    images -- dictionary showing to which permutation each strand/generator was sent
+    wirt_pres -- dictionary representing the Wirtinger presentation
+    order -- integer order of our permutations
+    """
 
     def traversal(images, wirt_pres):
+        #TODO True False as sign is very bad. Change it later
         for i in wirt_pres.keys():
-            compute_presentation(i, images, wirt_pres)
-
-    #TODO refactor
-    def compute_presentation(i, images, wirt_pres):
-        mu = images[ wirt_pres[i][1] ]
-        sigma = images[i]
-        tau = images[(i + 1) % len(wirt_pres)]
-        sign = wirt_pres[i][0]
-        if mu is not None:
-
-            if (sigma == tau == None or 
-                sigma is not None and tau is not None):
-                return
+            mu = images[ wirt_pres[i][1] ]
+            sigma = images[i]
+            tau = images[(i + 1) % len(wirt_pres)]
+            sign = wirt_pres[i][0]
+            if mu is not None:
+                if (sigma == tau == None or 
+                    sigma is not None and tau is not None):
+                    continue
+                
+                res = None
+                if sigma is not None:
+                    #relation for tau
+                    res = mu ** (sign) * sigma * mu ** ((-1) * sign)
+                    images[(i + 1) % len(wirt_pres)] = res
+                else:
+                    #relation for sigma
+                    res = mu ** ((-1) * sign) * tau * mu ** (sign)
+                    images[i] = res
+                
+                if res.order() != order:
+                    return False
             
-            if sigma is not None:
-                #relation for tau
-                images[(i + 1) % len(wirt_pres)] = mu ** (sign) * sigma * mu ** ((-1) * sign)
-            else:
-                #relation for sigma
-                images[i] = mu ** ((-1) * sign) * tau * mu ** (sign)
+        return True
 
     while None in images.values():
-        traversal(images, wirt_pres) 
+        if traversal(images, wirt_pres) == False:
+            return None
     
     return images
 
@@ -65,7 +85,7 @@ def perform_combinatoric(config_group_size, config_group_type, wirtinger_pres, g
     Group = permutation_utils.get_group_from_config(config_group_size, config_group_type)
     group = list(Group)
     slices = permutation_utils.split_by_order(group)
-    
+    res = []
     
     for k in slices.keys():
         slice_gr = slices[k]
@@ -77,10 +97,12 @@ def perform_combinatoric(config_group_size, config_group_type, wirtinger_pres, g
 
             #TODO maybe return None if permutations have different order
             images = compute_hom(images, wirtinger_pres, k)
-    
+            if images == None:
+                return
+
             if (permutation_utils.is_epimorphism(images, config_group_size, config_group_type) and
                 verify_homomorphism(images, wirtinger_pres)):
-                #print(images)
+                res.append(images)
                 return images
     print("no epimorhism found")
 

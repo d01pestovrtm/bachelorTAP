@@ -24,8 +24,8 @@ if __name__ == "__main__":
 		config_group_type = config['Settings']['group_type']
 		imgs = perform_combinatoric(config_group_size, config_group_type, wirt_pres, indices)
 		#numerator
-		det_upper = m.compute_Jacobi_matrix_for_TAP(imgs, wirt_pres, 0, 0, config_group_size).det()
-		det_lower = m.compute_denominator_matrix(imgs[0], config_group_size).det()
+		det_upper = m.compute_Jacobi_matrix_for_TAP(imgs[0], wirt_pres, 0, 0, config_group_size).det()
+		det_lower = m.compute_denominator_matrix(imgs[0][0], config_group_size).det()
 		tAlex_polynomial = det_upper / det_lower
 	
 	if config['Settings']['output_file'] != None:
