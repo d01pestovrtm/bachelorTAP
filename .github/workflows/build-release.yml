@@ -34,7 +34,7 @@ jobs:
       #    --windowed: Hides the black console window if you have a GUI
       #    Replace 'main.py' with your main script's filename
       - name: Build with PyInstaller
-        run: pyinstaller --onefile --windowed --name="MyMathProgram" main.py
+        run: pyinstaller --onefile --windowed --name="KnotTAP" main.py
 
       # 5. Creates a new Release on GitHub
       - name: Create Release
@@ -55,6 +55,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/MyMathProgram.exe
-          asset_name: MyMathProgram.exe
+          asset_path: ./dist/KnotTAP.exe
+          asset_name: KnotTAP.exe
           asset_content_type: application/vnd.microsoft.portable-executable
