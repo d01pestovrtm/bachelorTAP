@@ -1,10 +1,12 @@
 # some text data
 *.txt
 
+
 #folders
 __pycache__/
 *.pyc
 *.spec
 dist/
 build/
+
 

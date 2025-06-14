@@ -30,6 +30,7 @@ def verify_homomorphism(images, wirt_pres):
     return True
 
 
+
 def compute_hom(images, wirt_pres, order):
     """computes homomorphism under given generating set
 
@@ -84,9 +85,10 @@ def compute_hom(images, wirt_pres, order):
 def perform_combinatoric(config_group_size, config_group_type, wirtinger_pres, generating_set):
     Group = permutation_utils.get_group_from_config(config_group_size, config_group_type)
     group = list(Group)
+
     slices = permutation_utils.split_by_order(group)
     res = []
-    
+
     for k in slices.keys():
         slice_gr = slices[k]
 

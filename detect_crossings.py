@@ -2,6 +2,7 @@
 Utils to obtain wirtinger presentation from a give knot diagram
 """
 
+
 def wirt_presentation(strands):
     """Creates a dictionary representing Wirtinger presentation of a knot.
 
@@ -64,10 +65,10 @@ def find_crossed_strand(strand_index, strands, Wirt_dict):
         orientation = check_crossing(end_point, start_point, strands[st_id])
         if orientation < 0:
             Wirt_dict[first_index] = [-1, st_id]
-            #TODO verbose flag
             print(f"strands {first_index} and {second_index} undercross strand {st_id} - (negative crossing)")
             print(f"relation: x{st_id}**(-1) * x{second_index} * x{st_id} * x{first_index}**(-1)")
         if orientation > 0:
             Wirt_dict[first_index] = [1, st_id]
             print(f"strands {first_index} and {second_index} undercross strand {st_id} - (positive crossing)")
             print(f"relation: x{st_id} * x{second_index} * x{st_id}**(-1) * x{first_index}**(-1)")
+
