@@ -1,10 +1,9 @@
-name: Build Windows EXE and Create Release
+name: Build Windows EXE
 
 on:
   push:
-    tags:
-      - 'v*'   # Trigger only on version tags like v1.0
-  workflow_dispatch:  # Also allow manual trigger
+    branches:
+      - master    # change if your branch is named differently
 
 jobs:
   build:
@@ -17,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'  # Or your version
+        python-version: '3.10'
 
     - name: Install dependencies
       run: |
@@ -25,13 +24,11 @@ jobs:
         pip install pyinstaller
         pip install -r requirements.txt
 
-    - name: Build executable
-      run: |
-        pyinstaller --onefile main.py
+    - name: Build with PyInstaller
+      run: pyinstaller --onefile main.py
 
-    - name: Upload executable to release
-      uses: softprops/action-gh-release@v2
+    - name: Upload EXE as Artifact
+      uses: actions/upload-artifact@v4
       with:
-        files: dist/knotTAP.exe
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Windows-EXE
+        path: dist/knotTAP.exe
