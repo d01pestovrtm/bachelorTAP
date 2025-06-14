@@ -5,6 +5,9 @@ from find_generators import find_min_generating_set
 from find_homomorphism import perform_combinatoric
 import matrix as m
 
+# first version without relations reduction and parallel executing
+__version__ = "1.0.0"
+
 if __name__ == "__main__":
 	config = configparser.ConfigParser()
 	config.read('config.ini')
