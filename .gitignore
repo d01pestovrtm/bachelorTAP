@@ -1,6 +1,6 @@
 # some text data
 *.txt
-
+!requirements.txt
 
 #folders
 __pycache__/
