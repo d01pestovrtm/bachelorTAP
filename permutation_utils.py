@@ -12,6 +12,8 @@ def split_by_order(group):
                 if order not in res.keys():
                         res[order] = []
                 res[order].append(g)
+        #remove identity
+        res.pop(1, None)
         return res
 
 def get_group_from_config(config_group_size, config_group_type):

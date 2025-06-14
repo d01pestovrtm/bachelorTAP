@@ -98,13 +98,15 @@ def perform_combinatoric(config_group_size, config_group_type, wirtinger_pres, g
             #TODO maybe return None if permutations have different order
             images = compute_hom(images, wirtinger_pres, k)
             if images == None:
-                return
+                continue
 
             if (permutation_utils.is_epimorphism(images, config_group_size, config_group_type) and
                 verify_homomorphism(images, wirtinger_pres)):
                 res.append(images)
-                return images
-    print("no epimorhism found")
+    
+    if len(res) == 0:
+        print("no epimorhism found")
+    return res
 
 def run_trefoil():
     config_group_size = 3

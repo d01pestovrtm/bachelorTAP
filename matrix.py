@@ -21,7 +21,7 @@ def matrices_from_permutations(images):
 #images are permutations
 #at the moment this works only for knots, not links
 def compute_Jacobi_matrix_for_TAP(images, wirt_presentaion, relation_idx, generator_idx, size):
-    l = len(images[0])
+    l = len(images)
     matrix = zeros(size * (l - 1))
     relations_idx = [r for r in range(0, l) if r != relation_idx]
     for r in relations_idx:
