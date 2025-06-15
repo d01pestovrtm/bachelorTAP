@@ -5,7 +5,6 @@ on:
     tags:
       - 'v*'  # Trigger on tag push like v1.0, v1.1, etc.
 
-
 jobs:
   build:
     runs-on: windows-latest
@@ -23,6 +22,18 @@ jobs:
 
       - name: Build executable
         run: pyinstaller --onefile --name knotTAP main.py
+
+      - name: List files in dist folder for debugging
+        run: dir dist
+
+      - name: Verify executable exists
+        run: |
+          if exist dist\knotTAP.exe (
+            echo Executable found!
+          ) else (
+            echo ERROR: Executable NOT found!
+            exit 1
+          )
 
       - name: Create Release and upload EXE
         uses: softprops/action-gh-release@v2
