@@ -25,7 +25,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Build with PyInstaller
-      run: pyinstaller --onefile main.py
+      run: pyinstaller --onefile --name knotTAP main.py
 
     - name: Upload EXE as Artifact
       uses: actions/upload-artifact@v4
