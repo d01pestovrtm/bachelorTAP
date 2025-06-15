@@ -28,12 +28,12 @@ jobs:
 
       - name: Verify executable exists
         run: |
-          if exist dist\knotTAP.exe (
-            echo Executable found!
-          ) else (
-            echo ERROR: Executable NOT found!
+          if (Test-Path dist\knotTAP.exe) {
+            Write-Host "Executable found!"
+          } else {
+            Write-Error "ERROR: Executable NOT found!"
             exit 1
-          )
+          }
 
       - name: Create Release and upload EXE
         uses: softprops/action-gh-release@v2
